@@ -1,0 +1,21 @@
+import os
+Import('latex_env')
+local_env = latex_env.Clone()
+root = os.path.dirname(Dir('.').srcnode().abspath)
+src = os.path.join(root, 'src')
+media_path = os.path.join(root, 'media')
+local_env.Append(TEXINPUTS=[media_path])
+
+variant_dir = 'build'
+duplicate = 'y'
+
+# A list of tuples: (filename, ext)
+tex_files = [os.path.splitext(f) for f in os.listdir(src)
+    if os.path.splitext(f)[1] == '.tex']
+
+install = []
+for fname, ext in tex_files: 
+    install.append(local_env.PDF(source=f'{fname}.tex',
+        target=f'{fname}.pdf'))
+
+Return('install')
