@@ -1,5 +1,9 @@
-## Other
+## Variable Directories:
+build
+
+## Other:
 .DS_Store
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
