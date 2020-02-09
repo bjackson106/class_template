@@ -6,9 +6,6 @@ src = os.path.join(root, 'src')
 media_path = os.path.join(root, 'media')
 local_env.Append(TEXINPUTS=[media_path])
 
-variant_dir = 'build'
-duplicate = 'y'
-
 # A list of tuples: (filename, ext)
 tex_files = [os.path.splitext(f) for f in os.listdir(src)
     if os.path.splitext(f)[1] == '.tex']
