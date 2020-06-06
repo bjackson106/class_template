@@ -1,5 +1,72 @@
-\documentclass{article}
+\documentclass[12pt]{report}
+\usepackage[a4paper,width=165mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{inputenc}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{titlesec}
+\usepackage{indentfirst}
+
+\doublespacing
+
+\pagestyle{fancy}
+\fancyfoot{}
+\setlength{\headheight}{15pt}
+
+\renewcommand{\headrulewidth}{0pt}
+
+\titleformat{\section}              % Command
+[hang]                              % Shape
+{\normalsize\centering\bfseries}    % Format
+{\thesection}                       % Label
+{0em}                               % Spacing between label and title
+{}                                  % Before Code
+
+\titleformat{\subsection}           % Command
+[hang]                              % Shape
+{\normalsize\bfseries}              % Format
+{\thesubsection}                    % Label
+{0em}                               % Spacing between label and title
+{}                                  % Before Code
+
+\titleformat{\subsubsection}        % Command
+[runin]                             % Shape
+{\normalsize\bfseries}              % Format
+{\thesubsubsection}                 % Label
+{0em}                               % Spacing between label and title
+{\hspace{2em}}                      % Before Code
+[.\\]                               % After Code
+
+% Document Information
+\def \papertitle {Title of Paper}
+\def \paperauthor {Bacchus Jackson}
+\def \paperschool {University of Maryland Global Campus}
+\def \paperdate {9 December 2019}
 
 \begin{document}
-This is built with scons.
+
+% Title Page
+\fancyhead[L]{Running head: \MakeUppercase{\papertitle}}
+\fancyhead[R]{\thepage}
+
+\begin{center}
+    \vspace*{60mm}
+    \papertitle\\
+    \paperauthor\\
+    \paperschool\\
+    \paperdate
+
+\end{center}
+\newpage
+
+\fancyhead[L]{\papertitle}
+\fancyhead[R]{\thepage}
+
+\section*{Introduction}
+\lipsum[3]
+\section*{Heading Level 1}
+\lipsum[3]
+\section*{Conclusion}
+\lipsum[3]
+
 \end{document}
