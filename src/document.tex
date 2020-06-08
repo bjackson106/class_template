@@ -1,5 +1,5 @@
 \documentclass[12pt]{report}
-\usepackage[a4paper,width=165mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[a4paper,width=165mm,top=25.4mm,bottom=25.4mm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{inputenc}
 \usepackage{setspace}
@@ -38,35 +38,30 @@
 [.\\]                               % After Code
 
 % Document Information
-\def \papertitle {Title of Paper}
 \def \paperauthor {Bacchus Jackson}
+\def \papertitle {Title of Paper}
+\def \paperclass {ENGL 240}
 \def \paperschool {University of Maryland Global Campus}
 \def \paperdate {9 December 2019}
 
 \begin{document}
+\fancyhead[L]{}
+\fancyhead[R]{Jackson \thepage}
+% Title Information
 
-% Title Page
-\fancyhead[L]{Running head: \MakeUppercase{\papertitle}}
-\fancyhead[R]{\thepage}
-
-\begin{center}
-    \vspace*{60mm}
-    \papertitle\\
+\begin{flushleft}
     \paperauthor\\
+    \papertitle\\
+    \paperclass\\
     \paperschool\\
     \paperdate
 
+\end{flushleft}
+
+\begin{center}
+    \papertitle
 \end{center}
-\newpage
 
-\fancyhead[L]{\papertitle}
-\fancyhead[R]{\thepage}
-
-\section*{Introduction}
-\lipsum[3]
-\section*{Heading Level 1}
-\lipsum[3]
-\section*{Conclusion}
-\lipsum[3]
+\lipsum[4]
 
 \end{document}
