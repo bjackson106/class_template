@@ -8,12 +8,11 @@
 \usepackage{indentfirst}
 \usepackage[american]{babel}
 \usepackage{csquotes}
-\usepackage[style=mla,backend=biber]{biblatex}
+\usepackage[notes,backend=biber]{biblatex-chicago}
+\bibliography{references}
 
-\doublespacing
 
-
-\defbibheading{bibliography}{\newpage\centering Works Cited}
+\defbibheading{bibliography}{\newpage\centering Bibliography}
 
 \pagestyle{fancy}
 \fancyfoot{}
@@ -21,54 +20,34 @@
 
 \renewcommand{\headrulewidth}{0pt}
 
-\titleformat{\section}              % Command
-[hang]                              % Shape
-{\normalsize\centering\bfseries}    % Format
-{\thesection}                       % Label
-{0em}                               % Spacing between label and title
-{}                                  % Before Code
-
-\titleformat{\subsection}           % Command
-[hang]                              % Shape
-{\normalsize\bfseries}              % Format
-{\thesubsection}                    % Label
-{0em}                               % Spacing between label and title
-{}                                  % Before Code
-
-\titleformat{\subsubsection}        % Command
-[runin]                             % Shape
-{\normalsize\bfseries}              % Format
-{\thesubsubsection}                 % Label
-{0em}                               % Spacing between label and title
-{\hspace{2em}}                      % Before Code
-[.\\]                               % After Code
 
 % Document Information
 \def \paperauthor {Bacchus Jackson}
 \def \papertitle {Title of Paper}
-\def \paperclass {ENGL 240}
-\def \paperschool {University of Maryland Global Campus}
-\def \paperdate {9 December 2019}
+\def \paperclass {CLASS XXX}
+\def \paperdate {July 10, 2020}
 
-\addbibresource{references.bib}
+
+\doublespacing
 
 \begin{document}
-\fancyhead[L]{}
-\fancyhead[R]{Jackson \thepage}
-% Title Information
-
-\begin{flushleft}
-    \paperauthor\\
-    \papertitle\\
-    \paperclass\\
-    \paperschool\\
-    \paperdate
-
-\end{flushleft}
+    
+% Title Page
 
 \begin{center}
-    \papertitle
+    \vspace*{45mm}
+    \papertitle\\
+    \vspace*{85mm}
+    \paperauthor\\
+    \paperclass\\
+    \paperdate
 \end{center}
+
+\newpage
+
+% Body 
+\setcounter{page}{1}
+\fancyhead[R]{\thepage}
 
 Just a sentence with a quote "This is a quote" \autocite{thomas}
 
@@ -76,4 +55,6 @@ Just a sentence with a quote "This is a quote" \autocite{thomas}
 
 % Works Sited
 \printbibliography
+
+
 \end{document}
